@@ -54,7 +54,7 @@ function M.send_command(command)
 end
 
 function M.is_window()
-  return runner_is_open()
+  return runner_is_open
 end
 
 function M.open_runner()
