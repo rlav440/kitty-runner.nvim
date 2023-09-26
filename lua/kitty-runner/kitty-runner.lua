@@ -55,6 +55,7 @@ end
 
 function M.is_window()
   return runner_is_open()
+end
 
 function M.open_runner()
   if runner_is_open == false then
