@@ -49,6 +49,13 @@ local function prepare_command(region)
   return command
 end
 
+function M.send_command(command)
+  open_and_or_send(command)
+end
+
+function M.is_window()
+  return runner_is_open()
+
 function M.open_runner()
   if runner_is_open == false then
     if config["mode"] == "os-window" then
