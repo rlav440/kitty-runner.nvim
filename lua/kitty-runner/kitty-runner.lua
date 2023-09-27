@@ -15,9 +15,9 @@ local function send_kitty_command(cmd_args, command)
   local args = { "@", "--to=" .. config["kitty_port"] }
   for _, v in pairs(cmd_args) do
     table.insert(args, v)
+    print(v)
   end
   table.insert(args, command)
-  print(args)
   loop.spawn("kitty", {
     args = args,
   })
