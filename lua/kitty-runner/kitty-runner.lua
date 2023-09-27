@@ -52,7 +52,7 @@ local function prepare_command(region)
 end
 
 function M.send_command(command)
-  local exec_cmd = command .. "\r")
+  local exec_cmd = command .. "\r"
   open_and_or_send(exec_cmd)
 end
 
