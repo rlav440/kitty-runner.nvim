@@ -52,7 +52,8 @@ local function prepare_command(region)
 end
 
 function M.send_command(command)
-  open_and_or_send(command .. "\r")
+  local exec_cmd = command .. "\r")
+  open_and_or_send(exec_cmd)
 end
 
 function M.is_window()
@@ -77,7 +78,7 @@ function M.open_runner()
           "@",
           "launch",
           "--title=Kitty_runner",
-          "--env", "KITTYRUNNER=1"
+          "--env", "KITTYRUNNER=1",
           "--keep-focus",
           "--cwd=" .. vim.fn.getcwd()
         },
