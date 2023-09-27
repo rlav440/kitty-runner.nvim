@@ -2,6 +2,8 @@
 -- KITTY RUNNER
 --
 
+
+
 local config = require("kitty-runner.config")
 local fn = vim.fn
 local loop = vim.loop
@@ -15,7 +17,6 @@ local function send_kitty_command(cmd_args, command)
   local args = { "@", "--to=" .. config["kitty_port"] }
   for _, v in pairs(cmd_args) do
     table.insert(args, v)
-    print(v)
   end
   table.insert(args, command)
   loop.spawn("kitty", {
@@ -51,8 +52,7 @@ local function prepare_command(region)
 end
 
 function M.send_command(command)
-  print("hi")
-  open_and_or_send(command)
+  open_and_or_send(command .. "\r")
 end
 
 function M.is_window()
@@ -76,7 +76,8 @@ function M.open_runner()
         args = {
           "@",
           "launch",
-          "--title=" .. config["runner_name"],
+          "--title=Kitty_runner",
+          "--env", "KITTYRUNNER=1"
           "--keep-focus",
           "--cwd=" .. vim.fn.getcwd()
         },

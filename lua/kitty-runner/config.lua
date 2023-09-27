@@ -29,9 +29,9 @@ local default_config = {
 }
 
 local window_config = {
-  runner_name = "kitty-runner-" .. uuid,
-  run_cmd = { "send-text", "--match=title:" .. "kitty-runner-" .. uuid },
-  kill_cmd = { "close-window", "--match=title:" .. "kitty-runner-" .. uuid },
+  runner_name = "kitty-runner",
+  run_cmd = { "send-text", "--match=env:KITTYRUNNER=1" },
+  kill_cmd = { "close-window", "--match=env:KITTYRUNNER=1" },
   use_keymaps = true,
   kitty_port = "unix:/tmp/kitty",
   mode = "window"
