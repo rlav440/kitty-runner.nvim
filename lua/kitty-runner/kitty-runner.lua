@@ -17,6 +17,7 @@ local function send_kitty_command(cmd_args, command)
     table.insert(args, v)
   end
   table.insert(args, command)
+  print(args)
   loop.spawn("kitty", {
     args = args,
   })
@@ -50,6 +51,7 @@ local function prepare_command(region)
 end
 
 function M.send_command(command)
+  print("hi")
   open_and_or_send(command)
 end
 
