@@ -30,8 +30,8 @@ local default_config = {
 
 local window_config = {
   runner_name = "kitty-runner",
-  run_cmd = { "send-text", "--match=env:KITTYRUNNER=1" },
-  kill_cmd = { "close-window", "--match=env:KITTYRUNNER=1" },
+  run_cmd = { "send-text", "--match=title:kitty-runner" },
+  kill_cmd = { "close-window", "--match=title:kitty-runner" },
   use_keymaps = true,
   kitty_port = "unix:/tmp/kitty",
   mode = "window"
